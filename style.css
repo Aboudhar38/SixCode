@@ -1,0 +1,280 @@
+
+/* AI-assisted design: dark theme, responsive layout,
+   reusable components, and accessible focus states. */
+
+/* 1. Reset and global styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --background: #101116;
+    --surface: #1c1e27;
+    --border: #30333e;
+    --text: #f4f5f8;
+    --muted: #a5a8b4;
+    --primary: #6098ff;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+/* 2. Main container */
+.app {
+    width: min(100%, 760px);
+    margin: 0 auto;
+    padding: 24px;
+}
+
+/* 3. Header */
+.header {
+    margin-bottom: 24px;
+}
+
+.header h1 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: clamp(24px, 4vw, 36px);
+    line-height: 1.2;
+}
+
+.header h1 span {
+    font-size: 30px;
+}
+
+/* 4. Reusable button styles */
+button {
+    min-width: 0;
+    border: 2px solid var(--border);
+    border-radius: 20px;
+    background: var(--surface);
+    color: var(--text);
+    font: inherit;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+button:hover {
+    border-color: var(--primary);
+}
+
+button:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 3px;
+}
+
+button.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+/* 5. Language selection */
+.language-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.language {
+    min-height: 96px;
+    padding: 16px 10px;
+    font-size: clamp(18px, 3vw, 28px);
+    font-weight: 700;
+}
+
+.language.active {
+    background: #1c1e27;
+    color: var(--primary);
+    border: 3px solid var(--primary);
+}
+
+/* 6. Quiz sections */
+.section-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.section {
+    min-height: 64px;
+    padding: 12px 10px;
+    border-radius: 40px;
+    font-size: clamp(14px, 2.5vw, 21px);
+}
+
+.section.active {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+/* 7. Quiz, study and shuffle */
+.mode-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.mode {
+    min-height: 58px;
+    padding: 10px 20px;
+    border-radius: 40px;
+    font-size: clamp(16px, 2.5vw, 23px);
+}
+
+/* 8. Progress bar */
+.progress-section {
+    margin-bottom: 18px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+    color: var(--muted);
+    font-size: clamp(13px, 2.5vw, 19px);
+}
+
+.progress-bar {
+    height: 16px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #30333e;
+}
+
+.progress-fill {
+    width: 5%;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--primary);
+}
+
+/* 9. Question card */
+.question-card {
+    padding: 28px;
+    border: 2px solid var(--border);
+    border-radius: 28px;
+    background: var(--surface);
+}
+
+.source {
+    margin-bottom: 8px;
+    color: var(--muted);
+    font-size: 16px;
+}
+
+.question-card h2 {
+    margin-bottom: 26px;
+    font-size: clamp(20px, 3.5vw, 28px);
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+/* 10. Answer buttons */
+.answers {
+    display: grid;
+    gap: 12px;
+}
+
+.answer {
+    width: 100%;
+    min-height: 80px;
+    padding: 18px 24px;
+    border-width: 3px;
+    border-radius: 20px;
+    text-align: left;
+    font-size: clamp(17px, 3vw, 24px);
+    overflow-wrap: anywhere;
+}
+
+.answer strong {
+    font-weight: 700;
+}
+
+/* 11. Footer */
+.footer {
+    padding: 24px 8px;
+    color: var(--muted);
+    text-align: center;
+    font-size: 14px;
+}
+
+/* 12. Mobile responsive design */
+@media (max-width: 480px) {
+    .app {
+        padding: 18px 14px;
+    }
+
+    .header {
+        margin-bottom: 22px;
+    }
+
+    .language-options {
+        gap: 10px;
+    }
+
+    .language {
+        min-height: 76px;
+    }
+
+    .section-options {
+        gap: 8px;
+    }
+
+    .section {
+        min-height: 58px;
+        padding: 10px 6px;
+    }
+
+    .mode-options {
+        gap: 8px;
+        margin-bottom: 24px;
+    }
+
+    .mode {
+        min-height: 48px;
+        padding: 8px 14px;
+    }
+
+    .progress-info {
+        align-items: flex-start;
+    }
+
+    .question-card {
+        padding: 20px 16px;
+        border-radius: 22px;
+    }
+
+    .question-card h2 {
+        line-height: 1.5;
+    }
+
+    .answer {
+        min-height: 68px;
+        padding: 16px;
+        border-radius: 16px;
+    }
+}
+
+/* Respect users who prefer less animation */
+@media (prefers-reduced-motion: reduce) {
+    button {
+        transition: none;
+    }
+}

@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road Rules Trainer</title>
+
+    <!-- Connect the separate CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="app">
+
+        <!-- Header -->
+        <header class="header">
+            <h1><span>🚦</span> Road Rules Trainer</h1>
+        </header>
+
+        <!-- Language selection -->
+        <section class="language-options" aria-label="Language">
+            <button class="language active" type="button">
+                English
+            </button>
+
+            <button class="language" type="button">
+                Kinyarwanda
+            </button>
+        </section>
+
+        <!-- Sections -->
+        <nav class="section-options" aria-label="Quiz sections">
+            <button class="section active" type="button">
+                Section 1 · Q1–Q20
+            </button>
+
+            <button class="section" type="button">
+                Section 2 · Q1–Q20
+            </button>
+        </nav>
+
+        <!-- Modes -->
+        <div class="mode-options">
+            <button class="mode active" type="button">
+                Quiz
+            </button>
+
+            <button class="mode" type="button">
+                Study
+            </button>
+
+            <button class="mode" type="button">
+                🔀 Shuffle
+            </button>
+        </div>
+
+        <!-- Progress information -->
+        <section class="progress-section">
+            <div class="progress-info">
+                <span>Section 1 · Q1 · 1/20</span>
+                <span>Score: 0 · 🔥 0</span>
+            </div>
+
+            <div
+                class="progress-bar"
+                role="progressbar"
+                aria-label="Quiz progress"
+                aria-valuenow="5"
+                aria-valuemin="0"
+                aria-valuemax="100"
+            >
+                <div class="progress-fill"></div>
+            </div>
+        </section>
+
+        <!-- Question card -->
+        <article class="question-card">
+            <p class="source">Source no. 11</p>
+
+            <h2>
+                Outside built-up areas, the maximum speed per hour
+                of a moped (velomotori) is:
+            </h2>
+
+            <div class="answers">
+                <button class="answer" type="button">
+                    <strong>a)</strong> 50 km
+                </button>
+
+                <button class="answer" type="button">
+                    <strong>b)</strong> 40 km
+                </button>
+
+                <button class="answer" type="button">
+                    <strong>c)</strong> 30 km
+                </button>
+
+                <button class="answer" type="button">
+                    <strong>d)</strong> None of the answers is correct
+                </button>
+            </div>
+        </article>
+
+        <footer class="footer">
+            Road Rules Trainer · Learn at your own pace
+        </footer>
+
+    </main>
+</body>
+</html>
